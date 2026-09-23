@@ -212,7 +212,10 @@ def prepare_ml_data(
     enc_agg.index.name = "Id"
 
     # ── Condition / Medication / Procedure counts ─────────────────────────
-    cond_cnt = _conditions.groupby("PATIENT").size().rename("CONDITION_COUNT")
+    # Exclude the target diagnosis itself: counting it would make
+    # CONDITION_COUNT >= 1 for every positive patient and leak the label.
+    is_target = _conditions["DESCRIPTION"].str.lower() == target_condition.lower()
+    cond_cnt = _conditions[~is_target].groupby("PATIENT").size().rename("CONDITION_COUNT")
     cond_cnt.index.name = "Id"
     med_cnt  = _medications.groupby("PATIENT").size().rename("MEDICATION_COUNT")
     med_cnt.index.name = "Id"
