@@ -111,7 +111,7 @@ tbody th { font-weight: 600; color: var(--color-paper); white-space: nowrap; }
 td { color: var(--color-paper-3); }
 .band code { color: var(--color-paper); }
 
-pre { margin: 0; padding: var(--space-lg); overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); background: var(--color-paper-2); color: var(--color-ink); font-size: var(--text-sm); line-height: 1.75; scroll-margin-top: calc(var(--nav-h) + var(--space-xl)); }
+pre { margin: 0; padding: var(--space-lg); overflow-x: auto; border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); background: var(--color-paper-2); color: var(--color-ink); font-size: var(--text-sm); line-height: 1.75; scroll-margin-top: calc(var(--nav-h) + var(--space-xl)); }
 pre code { font-size: 1em; }
 
 /* footer */
